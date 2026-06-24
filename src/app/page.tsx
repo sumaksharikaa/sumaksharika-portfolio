@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { portfolioData } from "@/data/portfolio";
-import { Github, Linkedin, Mail, MapPin, ExternalLink, Download, BarChart3, Database, LineChart, Code2 } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, ExternalLink, Download, BarChart3, TrendingDown, Brain } from "lucide-react";
 
 export default function Home() {
   const fadeInUp = {
@@ -12,12 +11,110 @@ export default function Home() {
     viewport: { once: true }
   };
 
-  const stagger = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1,
-      },
+  const projects = [
+    {
+      title: "Retail Demand Forecasting",
+      subtitle: "Python • ARIMA • Prophet • XGBoost • MLflow",
+      description: "End-to-end demand forecasting pipeline on real Walmart weekly sales data. XGBoost achieved 2.61% MAPE — 74% below the industry benchmark of 5–10%. Includes promotional uplift modeling and MLflow experiment tracking.",
+      metrics: ["MAPE: 2.61%", "MAE: $39,864", "143 weeks data"],
+      tags: ["Time-Series", "Forecasting", "Feature Engineering"],
+      github: "https://github.com/sumaksharikaa/retail-demand-forecasting",
+      color: "blue",
+      Icon: TrendingDown,
     },
+    {
+      title: "Customer Churn Prediction",
+      subtitle: "Python • Scikit-learn • XGBoost • Random Forest • MLflow",
+      description: "ML classification project predicting telecom customer churn on 7,043 real customers. Logistic Regression achieved best ROC-AUC of 84.60% with recall of 78.61% — correctly identifying 4 out of 5 at-risk customers.",
+      metrics: ["ROC-AUC: 84.60%", "Recall: 78.61%", "7,043 customers"],
+      tags: ["Classification", "Customer Analytics", "Feature Engineering"],
+      github: "https://github.com/sumaksharikaa/customer-churn-prediction",
+      color: "emerald",
+      Icon: BarChart3,
+    },
+    {
+      title: "SQL Analytics & dbt Project",
+      subtitle: "SQL • dbt • Snowflake • Data Modeling",
+      description: "End-to-end analytics engineering project using dbt + SQL to build modular data models, tests, and documentation on a real business dataset. Targeting banking and retail analytics use cases.",
+      metrics: ["Coming Soon", "In Progress"],
+      tags: ["dbt", "SQL", "Snowflake", "Data Modeling"],
+      github: "",
+      color: "purple",
+      Icon: Brain,
+      comingSoon: true,
+    },
+  ];
+
+  const experience = [
+    {
+      role: "Data Scientist / Data Analyst",
+      company: "HSBC",
+      period: "10/2024 – Present",
+      location: "Remote, USA",
+      achievements: [
+        "Built time-series and ML forecasting models to predict customer behavioral trends, supporting demand planning and business forecasting use cases.",
+        "Improved data accuracy by 22% through automated SQL + Python validation pipelines on Snowflake enterprise data warehouses.",
+        "Designed Tableau self-service dashboards driving a 35% increase in digital banking adoption and 14% improvement in customer satisfaction.",
+        "Applied feature engineering and model validation contributing to 20% improvement in customer follow-up efficiency.",
+      ],
+    },
+    {
+      role: "Data Analyst / Data Scientist",
+      company: "TCS",
+      period: "01/2021 – 08/2023",
+      location: "Andhra Pradesh, India",
+      achievements: [
+        "Built predictive models for clinical risk stratification contributing to a 22% reduction in 30-day readmissions.",
+        "Reduced missing/inconsistent records by 18% through automated EHR data validation and reconciliation workflows.",
+        "Designed Power BI dashboards and automated pipelines enabling near real-time insights for executive stakeholders.",
+      ],
+    },
+  ];
+
+  const skills = [
+    {
+      category: "Languages",
+      items: ["Python (Pandas, NumPy)", "SQL (CTEs, Window Functions)"],
+    },
+    {
+      category: "ML & Forecasting",
+      items: ["XGBoost", "ARIMA", "Prophet", "Random Forest", "Logistic Regression", "Feature Engineering", "MLflow"],
+    },
+    {
+      category: "Data Warehousing",
+      items: ["Snowflake", "Azure", "ETL Pipelines", "Star Schema", "Data Modeling"],
+    },
+    {
+      category: "Visualization",
+      items: ["Tableau", "Power BI", "Executive Dashboards", "KPI Reporting"],
+    },
+    {
+      category: "Analytics Methods",
+      items: ["EDA", "Cohort Analysis", "Customer Segmentation", "Time-Series Analysis", "Variance Analysis"],
+    },
+    {
+      category: "Tools & Platforms",
+      items: ["Confluence", "MLflow", "PySpark (exposure)", "Git", "Google Colab"],
+    },
+  ];
+
+  const education = [
+    {
+      institution: "University of North Carolina at Charlotte",
+      degree: "M.S. Health Informatics and Analytics",
+      period: "08/2023 – 05/2025",
+    },
+    {
+      institution: "Koneru Lakshmaiah University",
+      degree: "Bachelor of Pharmacy",
+      period: "08/2018 – 05/2022",
+    },
+  ];
+
+  const colorMap: Record<string, string> = {
+    blue: "blue",
+    emerald: "emerald",
+    purple: "purple",
   };
 
   return (
@@ -35,10 +132,8 @@ export default function Home() {
           <div className="text-2xl font-bold text-white tracking-tight cursor-pointer">
             Sumaksharika<span className="text-blue-500">.</span>
           </div>
-          
           <div className="flex items-center gap-6">
-             {/* Resume Button - Updated Link */}
-             <a
+            <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
@@ -46,10 +141,8 @@ export default function Home() {
             >
               <Download size={18} /> Resume
             </a>
-
-            {/* Hire Me Button */}
             <a
-              href={`mailto:${portfolioData.personalInfo.email}`}
+              href="mailto:sumaksharika.n@gmail.com"
               className="px-6 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] active:scale-95"
             >
               Hire Me
@@ -68,254 +161,220 @@ export default function Home() {
             className="space-y-8"
           >
             <div className="inline-block px-4 py-1.5 text-sm font-medium text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20">
-              Available for new opportunities
+              Available for new opportunities · Charlotte, NC
             </div>
             <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight leading-[1.1]">
               Data <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400">
-                Storyteller.
+                Scientist.
               </span>
             </h1>
             <p className="text-xl text-gray-400 max-w-xl leading-relaxed">
-              Transforming complex datasets into clear, actionable business strategies. 
-              Specialized in <span className="text-white">Healthcare</span> & <span className="text-white">Finance</span> analytics.
+              Building <span className="text-white">demand forecasting models</span>,{" "}
+              <span className="text-white">ML pipelines</span>, and self-service BI solutions
+              that drive measurable business impact across Banking & Healthcare.
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-4">
+            {/* Real Stats */}
+            <div className="grid grid-cols-3 gap-4 pt-2">
+              <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
+                <div className="text-2xl font-bold text-blue-400">2.61%</div>
+                <div className="text-xs text-gray-500 mt-1">Best MAPE</div>
+              </div>
+              <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
+                <div className="text-2xl font-bold text-emerald-400">84.6%</div>
+                <div className="text-xs text-gray-500 mt-1">Best ROC-AUC</div>
+              </div>
+              <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
+                <div className="text-2xl font-bold text-purple-400">3+</div>
+                <div className="text-xs text-gray-500 mt-1">Yrs Experience</div>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-4 pt-2">
               <a
                 href="#projects"
                 className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors"
               >
-                View Work
+                View Projects
               </a>
               <a
-                href={portfolioData.personalInfo.linkedin}
+                href="https://linkedin.com/in/sumaksharika"
                 target="_blank"
-                className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors text-white"
+                className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors text-white flex items-center gap-2"
               >
-                LinkedIn
+                <Linkedin size={16} /> LinkedIn
+              </a>
+              <a
+                href="https://github.com/sumaksharikaa"
+                target="_blank"
+                className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors text-white flex items-center gap-2"
+              >
+                <Github size={16} /> GitHub
               </a>
             </div>
           </motion.div>
 
-          {/* Animated Hero Graphic (Charts & Data) */}
-          <motion.div 
-             initial={{ opacity: 0, scale: 0.9 }}
-             animate={{ opacity: 1, scale: 1 }}
-             transition={{ duration: 0.8 }}
-             className="relative hidden lg:block h-[500px] w-full"
+          {/* Terminal Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative hidden lg:block"
           >
-            {/* Main Dashboard Card */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black rounded-3xl border border-white/10 shadow-2xl overflow-hidden p-6 flex flex-col">
-               {/* Header */}
-               <div className="flex justify-between items-center mb-8 border-b border-white/5 pb-4">
-                 <div className="flex gap-2">
-                   <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                   <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                   <div className="w-3 h-3 rounded-full bg-green-500/50" />
-                 </div>
-                 <div className="text-xs text-gray-500 uppercase tracking-widest">Live Analytics</div>
-               </div>
-
-               {/* Animated Bar Chart */}
-               <div className="flex items-end justify-between h-48 px-2 gap-2 mb-8">
-                 {[40, 70, 50, 90, 60, 80, 45, 75].map((height, i) => (
-                   <motion.div
-                     key={i}
-                     initial={{ height: 0 }}
-                     animate={{ height: `${height}%` }}
-                     transition={{ duration: 1.5, delay: i * 0.1, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-                     className={`w-full rounded-t-lg opacity-80 ${i % 2 === 0 ? 'bg-blue-500' : 'bg-emerald-500'}`}
-                   />
-                 ))}
-               </div>
-
-               {/* Metrics Grid */}
-               <div className="grid grid-cols-2 gap-4 mt-auto">
-                 <div className="p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
-                   <div className="text-gray-400 text-xs uppercase tracking-wider mb-2">Efficiency</div>
-                   <div className="text-3xl font-bold text-white flex items-baseline gap-1">
-                     24.8<span className="text-sm text-emerald-400 font-normal">%</span>
-                   </div>
-                 </div>
-                 <div className="p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:bg-white/10 transition-colors">
-                   <div className="text-gray-400 text-xs uppercase tracking-wider mb-2">Risk Reduction</div>
-                   <div className="text-3xl font-bold text-emerald-400 flex items-baseline gap-1">
-                     12.5<span className="text-sm text-white/50 font-normal">%</span>
-                   </div>
-                 </div>
-               </div>
+            <div className="bg-[#0d1117] rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#161b22]">
+                <div className="w-3 h-3 rounded-full bg-red-500/70" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
+                <div className="w-3 h-3 rounded-full bg-green-500/70" />
+                <span className="ml-2 text-xs text-gray-500 font-mono">results.py</span>
+              </div>
+              <div className="p-6 font-mono text-sm space-y-1">
+                <div><span className="text-blue-400">$</span> <span className="text-white">python demand_forecasting.py</span></div>
+                <div className="text-gray-500">Training ARIMA(2,1,2)...</div>
+                <div><span className="text-emerald-400">✓ ARIMA</span> <span className="text-gray-400">MAPE:</span> <span className="text-yellow-400">4.71%</span></div>
+                <div className="text-gray-500">Training Prophet...</div>
+                <div><span className="text-emerald-400">✓ Prophet</span> <span className="text-gray-400">MAPE:</span> <span className="text-yellow-400">3.02%</span></div>
+                <div className="text-gray-500">Training XGBoost...</div>
+                <div><span className="text-emerald-400">✓ XGBoost</span> <span className="text-gray-400">MAPE:</span> <span className="text-yellow-400">2.61%</span> <span className="text-white">🏆</span></div>
+                <div className="pt-2"><span className="text-blue-400">$</span> <span className="text-white">python churn_prediction.py</span></div>
+                <div className="text-gray-500">Training models...</div>
+                <div><span className="text-emerald-400">✓ LogReg</span> <span className="text-gray-400">ROC-AUC:</span> <span className="text-yellow-400">84.60%</span> <span className="text-white">🏆</span></div>
+                <div><span className="text-emerald-400">✓ RandomForest</span> <span className="text-gray-400">ROC-AUC:</span> <span className="text-yellow-400">84.14%</span></div>
+                <div><span className="text-emerald-400">✓ XGBoost</span> <span className="text-gray-400">ROC-AUC:</span> <span className="text-yellow-400">83.94%</span></div>
+                <div className="pt-2 text-gray-500">Industry benchmark MAPE: 5–10%</div>
+                <div><span className="text-emerald-400">✓ Achieved:</span> <span className="text-yellow-400">2.61%</span> <span className="text-gray-500">(74% below benchmark)</span></div>
+              </div>
             </div>
-
-            {/* Floating Overlay Card 1 */}
-            <motion.div 
-               animate={{ y: [-10, 10, -10] }}
-               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-               className="absolute -right-8 top-20 bg-[#1a1a1a] p-4 rounded-2xl border border-white/10 shadow-xl"
-            >
-               <div className="flex items-center gap-3">
-                 <div className="p-2 bg-purple-500/20 rounded-lg">
-                   <Database size={20} className="text-purple-400" />
-                 </div>
-                 <div>
-                   <div className="text-xs text-gray-400">Data Processed</div>
-                   <div className="text-sm font-bold text-white">3.2 Million</div>
-                 </div>
-               </div>
-            </motion.div>
-
-            {/* Floating Overlay Card 2 */}
-            <motion.div 
-               animate={{ y: [10, -10, 10] }}
-               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-               className="absolute -left-8 bottom-32 bg-[#1a1a1a] p-4 rounded-2xl border border-white/10 shadow-xl"
-            >
-               <div className="flex items-center gap-3">
-                 <div className="p-2 bg-blue-500/20 rounded-lg">
-                   <Code2 size={20} className="text-blue-400" />
-                 </div>
-                 <div>
-                   <div className="text-xs text-gray-400">Pipelines</div>
-                   <div className="text-sm font-bold text-white">99.9% Uptime</div>
-                 </div>
-               </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Section (New) */}
-      <section className="py-32 px-6 relative">
+      {/* Projects Section */}
+      <section id="projects" className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
-           <motion.div {...fadeInUp} className="mb-20">
-              <h2 className="text-4xl font-bold text-white mb-6">What I Do</h2>
-              <div className="h-1 w-20 bg-blue-500 rounded-full" />
-           </motion.div>
+          <motion.div {...fadeInUp} className="mb-16 text-center">
+            <p className="text-blue-400 font-mono text-sm tracking-widest uppercase mb-3">// what I&apos;ve built</p>
+            <h2 className="text-4xl font-bold text-white">Featured Projects</h2>
+          </motion.div>
 
-           <div className="grid md:grid-cols-3 gap-8">
-              {[
-                { title: "Data Analysis", icon: <BarChart3 className="text-blue-400" size={32} />, desc: "Uncovering trends and patterns to drive strategic decisions." },
-                { title: "Data Engineering", icon: <Database className="text-emerald-400" size={32} />, desc: "Building robust ETL pipelines and Snowflake warehouses." },
-                { title: "BI Dashboarding", icon: <LineChart className="text-purple-400" size={32} />, desc: "Creating interactive Power BI & Tableau visuals for stakeholders." }
-              ].map((service, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.1 }}
-                  viewport={{ once: true }}
-                  className="p-8 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-2xl transition-all group"
-                >
-                  <div className="mb-6 p-4 bg-white/5 rounded-xl w-fit group-hover:scale-110 transition-transform">
-                    {service.icon}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                whileHover={{ y: -8 }}
+                className={`group relative bg-[#111] rounded-2xl overflow-hidden border transition-all flex flex-col ${
+                  project.comingSoon
+                    ? "border-white/5 opacity-70"
+                    : project.color === "blue"
+                    ? "border-white/5 hover:border-blue-500/50"
+                    : "border-white/5 hover:border-emerald-500/50"
+                }`}
+              >
+                <div className={`h-36 p-8 flex items-end bg-gradient-to-br ${
+                  project.color === "blue" ? "from-blue-900/20 to-black" :
+                  project.color === "emerald" ? "from-emerald-900/20 to-black" :
+                  "from-purple-900/20 to-black"
+                }`}>
+                  <project.Icon size={40} className={`${
+                    project.color === "blue" ? "text-blue-500/50 group-hover:text-blue-400" :
+                    project.color === "emerald" ? "text-emerald-500/50 group-hover:text-emerald-400" :
+                    "text-purple-500/50 group-hover:text-purple-400"
+                  } transition-colors`} />
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
+                  <p className={`text-sm mb-3 ${
+                    project.color === "blue" ? "text-blue-400" :
+                    project.color === "emerald" ? "text-emerald-400" : "text-purple-400"
+                  }`}>{project.subtitle}</p>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">{project.description}</p>
+
+                  {/* Metrics chips */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.metrics.map((m, i) => (
+                      <span key={i} className={`text-xs px-2 py-1 rounded font-mono ${
+                        project.color === "blue" ? "bg-blue-500/10 text-blue-300" :
+                        project.color === "emerald" ? "bg-emerald-500/10 text-emerald-300" :
+                        "bg-purple-500/10 text-purple-300"
+                      }`}>{m}</span>
+                    ))}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{service.desc}</p>
-                </motion.div>
-              ))}
-           </div>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">{tag}</span>
+                    ))}
+                  </div>
+
+                  {project.github ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors"
+                    >
+                      <Github size={16} /> View on GitHub <ExternalLink size={12} />
+                    </a>
+                  ) : (
+                    <span className="text-sm text-gray-600 italic">In progress...</span>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Featured Projects (New Style) */}
-      <section id="projects" className="py-32 px-6 bg-[#0c0c0c] relative">
-         <div className="absolute inset-0 bg-blue-900/5 clip-path-slant" />
-         <div className="max-w-7xl mx-auto relative z-10">
-           <motion.div {...fadeInUp} className="mb-20">
-              <h2 className="text-4xl font-bold text-white mb-6">Featured Work</h2>
-              <div className="h-1 w-20 bg-emerald-500 rounded-full" />
-           </motion.div>
-
-           <div className="grid md:grid-cols-2 gap-10">
-              {/* Project 1 */}
-              <motion.div 
-                whileHover={{ y: -10 }}
-                className="group relative bg-[#111] rounded-2xl overflow-hidden border border-white/5 hover:border-blue-500/50 transition-all"
-              >
-                <div className="h-48 bg-gradient-to-br from-blue-900/20 to-black p-8 flex items-end">
-                   <Code2 size={48} className="text-blue-500/50 group-hover:text-blue-400 transition-colors" />
-                </div>
-                <div className="p-8">
-                   <h3 className="text-2xl font-bold text-white mb-2">Credit Risk Analytics</h3>
-                   <p className="text-emerald-400 text-sm mb-4">Python • Snowflake • ETL</p>
-                   <p className="text-gray-400 mb-6">Built a risk detection model processing 3M+ transactions, identifying $1.2M in at-risk revenue.</p>
-                   <div className="flex gap-2">
-                      <span className="px-3 py-1 bg-white/5 rounded-md text-xs text-gray-300">Data Modeling</span>
-                      <span className="px-3 py-1 bg-white/5 rounded-md text-xs text-gray-300">Fraud Detection</span>
-                   </div>
-                </div>
-              </motion.div>
-
-              {/* Project 2 */}
-              <motion.div 
-                whileHover={{ y: -10 }}
-                className="group relative bg-[#111] rounded-2xl overflow-hidden border border-white/5 hover:border-emerald-500/50 transition-all"
-              >
-                <div className="h-48 bg-gradient-to-br from-emerald-900/20 to-black p-8 flex items-end">
-                   <BarChart3 size={48} className="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" />
-                </div>
-                <div className="p-8">
-                   <h3 className="text-2xl font-bold text-white mb-2">Student Retention Engine</h3>
-                   <p className="text-emerald-400 text-sm mb-4">Docker • Scikit-Learn • AI</p>
-                   <p className="text-gray-400 mb-6">Deployed a churn prediction microservice with 89% accuracy, saving $2M+ in tuition revenue.</p>
-                   <div className="flex gap-2">
-                      <span className="px-3 py-1 bg-white/5 rounded-md text-xs text-gray-300">Predictive AI</span>
-                      <span className="px-3 py-1 bg-white/5 rounded-md text-xs text-gray-300">Python</span>
-                   </div>
-                </div>
-              </motion.div>
-           </div>
-         </div>
-      </section>
-
-      {/* Experience Section (Restyled) */}
+      {/* Experience Section */}
       <section className="py-32 px-6 max-w-5xl mx-auto">
-        <motion.h2 {...fadeInUp} className="text-4xl font-bold text-white mb-16 text-center">
-          Professional Journey
-        </motion.h2>
+        <motion.div {...fadeInUp} className="mb-16 text-center">
+          <p className="text-blue-400 font-mono text-sm tracking-widest uppercase mb-3">// where I&apos;ve worked</p>
+          <h2 className="text-4xl font-bold text-white">Professional Journey</h2>
+        </motion.div>
 
         <div className="space-y-12 relative before:absolute before:left-[19px] md:before:left-1/2 before:top-0 before:bottom-0 before:w-[2px] before:bg-gradient-to-b before:from-blue-500 before:via-purple-500 before:to-emerald-500 before:opacity-20">
-          {portfolioData.experience.map((job, idx) => (
+          {experience.map((job, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className={`relative flex flex-col md:flex-row gap-8 ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+              className={`relative flex flex-col md:flex-row gap-8 ${idx % 2 === 0 ? "md:flex-row-reverse" : ""}`}
             >
-               {/* Timeline Dot with Glow */}
-               <div className="absolute left-0 md:left-1/2 w-10 h-10 -translate-x-1/2 flex items-center justify-center z-10">
-                 <div className="w-4 h-4 bg-[#0a0a0a] border-2 border-blue-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]" />
-               </div>
-
-               {/* Content Card */}
-               <div className="md:w-1/2 pl-12 md:pl-0 md:px-12">
-                  <div className={`p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-blue-500/30 transition-all group ${idx % 2 === 0 ? 'md:text-left' : 'md:text-left'}`}>
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
-                        <div>
-                           <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">{job.role}</h3>
-                           <div className="text-blue-400 font-medium">{job.company}</div>
-                        </div>
-                        <div className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-400 font-mono border border-white/5">
-                           {job.period}
-                        </div>
+              <div className="absolute left-0 md:left-1/2 w-10 h-10 -translate-x-1/2 flex items-center justify-center z-10">
+                <div className="w-4 h-4 bg-[#0a0a0a] border-2 border-blue-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]" />
+              </div>
+              <div className="md:w-1/2 pl-12 md:pl-0 md:px-12">
+                <div className="p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-blue-500/30 transition-all group">
+                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                    <div>
+                      <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">{job.role}</h3>
+                      <div className="text-blue-400 font-medium">{job.company}</div>
                     </div>
-                    
-                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
-                       <MapPin size={14} /> {job.location}
+                    <div className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-400 font-mono border border-white/5 whitespace-nowrap">
+                      {job.period}
                     </div>
-
-                    <ul className="space-y-3 text-gray-400 text-sm">
-                      {job.achievements.slice(0, 3).map((bullet, bIdx) => (
-                        <li key={bIdx} className="flex gap-3">
-                          <span className="mt-1.5 w-1.5 h-1.5 bg-blue-500/50 rounded-full flex-shrink-0" />
-                          <span className="leading-relaxed">{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
-               </div>
-               <div className="md:w-1/2" /> 
+                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
+                    <MapPin size={14} /> {job.location}
+                  </div>
+                  <ul className="space-y-3 text-gray-400 text-sm">
+                    {job.achievements.map((bullet, bIdx) => (
+                      <li key={bIdx} className="flex gap-3">
+                        <span className="mt-1.5 w-1.5 h-1.5 bg-blue-500/50 rounded-full flex-shrink-0" />
+                        <span className="leading-relaxed">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="md:w-1/2" />
             </motion.div>
           ))}
         </div>
@@ -324,29 +383,26 @@ export default function Home() {
       {/* Skills & Education Grid */}
       <section className="py-32 px-6 bg-white/5 border-y border-white/5">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
-          
-          {/* Skills */}
           <div>
             <h2 className="text-3xl font-bold text-white mb-10">Technical Arsenal</h2>
             <div className="grid grid-cols-2 gap-4">
-               {portfolioData.skills.slice(0, 4).map((grp, i) => (
-                 <div key={i} className="p-4 bg-black/40 border border-white/10 rounded-xl">
-                    <h3 className="text-white font-semibold mb-3">{grp.category}</h3>
-                    <div className="flex flex-wrap gap-2">
-                       {grp.items.map((item, j) => (
-                         <span key={j} className="text-xs px-2 py-1 bg-blue-500/10 text-blue-300 rounded">{item}</span>
-                       ))}
-                    </div>
-                 </div>
-               ))}
+              {skills.slice(0, 4).map((grp, i) => (
+                <div key={i} className="p-4 bg-black/40 border border-white/10 rounded-xl">
+                  <h3 className="text-white font-semibold mb-3">{grp.category}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {grp.items.map((item, j) => (
+                      <span key={j} className="text-xs px-2 py-1 bg-blue-500/10 text-blue-300 rounded">{item}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Education */}
           <div>
             <h2 className="text-3xl font-bold text-white mb-10">Education</h2>
             <div className="space-y-6">
-              {portfolioData.education.map((edu, idx) => (
+              {education.map((edu, idx) => (
                 <div key={idx} className="p-6 bg-black/40 border border-white/10 rounded-xl flex items-start justify-between">
                   <div>
                     <h3 className="text-white font-semibold text-lg">{edu.institution}</h3>
@@ -356,29 +412,57 @@ export default function Home() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-8">
+              <h3 className="text-white font-semibold mb-4">Certifications</h3>
+              <div className="space-y-3">
+                {["Tableau Desktop Specialist", "DataCamp Data Analyst Track", "dbt Fundamentals (in progress)"].map((cert, i) => (
+                  <div key={i} className="flex items-center gap-3 text-sm text-gray-400">
+                    <span className="w-1.5 h-1.5 bg-blue-500/50 rounded-full flex-shrink-0" />
+                    {cert}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer / CTA */}
       <section className="py-32 px-6 text-center">
-        <motion.div 
-           initial={{ opacity: 0, scale: 0.9 }}
-           whileInView={{ opacity: 1, scale: 1 }}
-           className="max-w-3xl mx-auto bg-gradient-to-br from-blue-900/20 to-emerald-900/20 p-12 rounded-3xl border border-white/10"
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className="max-w-3xl mx-auto bg-gradient-to-br from-blue-900/20 to-emerald-900/20 p-12 rounded-3xl border border-white/10"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to transform your data?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let&apos;s build something together.</h2>
           <p className="text-xl text-gray-400 mb-10">
-            Currently available for full-time Data Analyst roles.
+            Actively targeting Senior Data Scientist and Lead Analyst roles in Charlotte, NC.
           </p>
-          <a
-            href={`mailto:${portfolioData.personalInfo.email}`}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors"
-          >
-            <Mail size={20} /> Get in Touch
-          </a>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a
+              href="mailto:sumaksharika.n@gmail.com"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors"
+            >
+              <Mail size={20} /> Get in Touch
+            </a>
+            <a
+              href="https://github.com/sumaksharikaa"
+              target="_blank"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-colors border border-white/10"
+            >
+              <Github size={20} /> GitHub
+            </a>
+            <a
+              href="https://linkedin.com/in/sumaksharika"
+              target="_blank"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors"
+            >
+              <Linkedin size={20} /> LinkedIn
+            </a>
+          </div>
         </motion.div>
-        
+
         <footer className="mt-20 text-gray-600 text-sm">
           <p>© {new Date().getFullYear()} Sumaksharika Nainavarapu. All rights reserved.</p>
         </footer>
