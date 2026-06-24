@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin, ExternalLink, Download, BarChart3, TrendingDown, Brain } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, ExternalLink, Download, BarChart3, TrendingDown, Brain, Activity } from "lucide-react";
 
 export default function Home() {
   const fadeInUp = {
@@ -31,6 +31,16 @@ export default function Home() {
       github: "https://github.com/sumaksharikaa/customer-churn-prediction",
       color: "emerald",
       Icon: BarChart3,
+    },
+    {
+      title: "U.S. Maternal Mortality Analysis",
+      subtitle: "Python • Tableau • Excel • CDC Data • PRAMS",
+      description: "M.S. capstone project analyzing the impact of COVID-19 on U.S. maternal mortality rates (2017–2023). Merged multi-source datasets (CDC VSRR, PRAMS, Pregnancy Mortality Surveillance Systems) to uncover racial, demographic, and socioeconomic disparities. MMR rose 51% during the pandemic (25.91 → 39.26). Correlation analysis revealed Adj. R²=0.941 between mortality ratio and year. Tableau dashboards exposed that American Indian/Alaska Native mothers face mortality rates nearly 4x higher than White mothers.",
+      metrics: ["MMR +51% (COVID)", "Adj. R² = 0.941", "2017–2023 data"],
+      tags: ["Healthcare Analytics", "EDA", "Correlation Analysis", "Tableau", "CDC Data"],
+      github: "https://github.com/sumaksharikaa/maternal-mortality-analysis",
+      color: "pink",
+      Icon: Activity,
     },
     {
       title: "SQL Analytics & dbt Project",
@@ -272,17 +282,23 @@ export default function Home() {
                     ? "border-white/5 opacity-70"
                     : project.color === "blue"
                     ? "border-white/5 hover:border-blue-500/50"
-                    : "border-white/5 hover:border-emerald-500/50"
+                    : project.color === "emerald"
+                    ? "border-white/5 hover:border-emerald-500/50"
+                    : project.color === "pink"
+                    ? "border-white/5 hover:border-pink-500/50"
+                    : "border-white/5 hover:border-purple-500/50"
                 }`}
               >
                 <div className={`h-36 p-8 flex items-end bg-gradient-to-br ${
                   project.color === "blue" ? "from-blue-900/20 to-black" :
                   project.color === "emerald" ? "from-emerald-900/20 to-black" :
+                  project.color === "pink" ? "from-pink-900/20 to-black" :
                   "from-purple-900/20 to-black"
                 }`}>
                   <project.Icon size={40} className={`${
                     project.color === "blue" ? "text-blue-500/50 group-hover:text-blue-400" :
                     project.color === "emerald" ? "text-emerald-500/50 group-hover:text-emerald-400" :
+                    project.color === "pink" ? "text-pink-500/50 group-hover:text-pink-400" :
                     "text-purple-500/50 group-hover:text-purple-400"
                   } transition-colors`} />
                 </div>
@@ -290,7 +306,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
                   <p className={`text-sm mb-3 ${
                     project.color === "blue" ? "text-blue-400" :
-                    project.color === "emerald" ? "text-emerald-400" : "text-purple-400"
+                    project.color === "emerald" ? "text-emerald-400" : project.color === "pink" ? "text-pink-400" : "text-purple-400"
                   }`}>{project.subtitle}</p>
                   <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">{project.description}</p>
 
@@ -300,6 +316,7 @@ export default function Home() {
                       <span key={i} className={`text-xs px-2 py-1 rounded font-mono ${
                         project.color === "blue" ? "bg-blue-500/10 text-blue-300" :
                         project.color === "emerald" ? "bg-emerald-500/10 text-emerald-300" :
+                        project.color === "pink" ? "bg-pink-500/10 text-pink-300" :
                         "bg-purple-500/10 text-purple-300"
                       }`}>{m}</span>
                     ))}
