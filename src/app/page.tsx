@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin, ExternalLink, Download, BarChart3, TrendingDown, Brain, Activity } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, ExternalLink, Download, BarChart3, TrendingDown, Brain, Activity, DollarSign, MessageSquare } from "lucide-react";
 
 export default function Home() {
   const fadeInUp = {
@@ -13,13 +13,72 @@ export default function Home() {
 
   const projects = [
     {
+      title: "Financial Risk Dashboard",
+      subtitle: "PostgreSQL • Python • XGBoost • Streamlit",
+      description: "End-to-end credit risk analytics pipeline on 2.26M Lending Club loans ($34B portfolio). XGBoost default prediction model achieving AUC-ROC of 0.73. Interactive Streamlit dashboard with real-time filters deployed publicly.",
+      metrics: ["AUC-ROC: 0.73", "$34B portfolio", "2.26M loans"],
+      tags: ["Credit Risk", "SQL", "XGBoost", "Streamlit"],
+      github: "https://github.com/sumaksharikaa/financial-risk-dashboard",
+      demo: "https://financial-risk-dashboard-ovjmqv7edtxfdeczx8zctv.streamlit.app",
+      color: "blue",
+      Icon: DollarSign,
+    },
+    {
+      title: "Earnings Call NLP Analyzer",
+      subtitle: "FinBERT • HuggingFace • Python • Streamlit",
+      description: "FinBERT sentiment analysis on 514 earnings call transcripts from 30 S&P 500 companies across 8 sectors. Detected COVID-19 impact (Disney Q3 2020 negative sentiment) and identified risk language patterns across Finance, Tech, and Healthcare.",
+      metrics: ["514 transcripts", "30 companies", "8 sectors"],
+      tags: ["NLP", "FinBERT", "Sentiment Analysis", "Finance"],
+      github: "https://github.com/sumaksharikaa/earnings-call-nlp",
+      demo: "https://earnings-call-nlp-hpvrwqwv6rrtxknzwt2seb.streamlit.app",
+      color: "emerald",
+      Icon:
+cat > ~/sumaksharika-portfolio/src/app/page.tsx << 'ENDOFFILE'
+"use client";
+
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, MapPin, ExternalLink, Download, BarChart3, TrendingDown, Brain, Activity, DollarSign, MessageSquare } from "lucide-react";
+
+export default function Home() {
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 },
+    viewport: { once: true }
+  };
+
+  const projects = [
+    {
+      title: "Financial Risk Dashboard",
+      subtitle: "PostgreSQL • Python • XGBoost • Streamlit",
+      description: "End-to-end credit risk analytics pipeline on 2.26M Lending Club loans ($34B portfolio). XGBoost default prediction model achieving AUC-ROC of 0.73. Interactive Streamlit dashboard with real-time filters deployed publicly.",
+      metrics: ["AUC-ROC: 0.73", "$34B portfolio", "2.26M loans"],
+      tags: ["Credit Risk", "SQL", "XGBoost", "Streamlit"],
+      github: "https://github.com/sumaksharikaa/financial-risk-dashboard",
+      demo: "https://financial-risk-dashboard-ovjmqv7edtxfdeczx8zctv.streamlit.app",
+      color: "blue",
+      Icon: DollarSign,
+    },
+    {
+      title: "Earnings Call NLP Analyzer",
+      subtitle: "FinBERT • HuggingFace • Python • Streamlit",
+      description: "FinBERT sentiment analysis on 514 earnings call transcripts from 30 S&P 500 companies across 8 sectors. Detected COVID-19 impact (Disney Q3 2020 negative sentiment) and identified risk language patterns across Finance, Tech, and Healthcare.",
+      metrics: ["514 transcripts", "30 companies", "8 sectors"],
+      tags: ["NLP", "FinBERT", "Sentiment Analysis", "Finance"],
+      github: "https://github.com/sumaksharikaa/earnings-call-nlp",
+      demo: "https://earnings-call-nlp-hpvrwqwv6rrtxknzwt2seb.streamlit.app",
+      color: "emerald",
+      Icon: MessageSquare,
+    },
+    {
       title: "Retail Demand Forecasting",
       subtitle: "Python • ARIMA • Prophet • XGBoost • MLflow",
       description: "End-to-end demand forecasting pipeline on real Walmart weekly sales data. XGBoost achieved 2.61% MAPE — 74% below the industry benchmark of 5–10%. Includes promotional uplift modeling and MLflow experiment tracking.",
       metrics: ["MAPE: 2.61%", "MAE: $39,864", "143 weeks data"],
       tags: ["Time-Series", "Forecasting", "Feature Engineering"],
       github: "https://github.com/sumaksharikaa/retail-demand-forecasting",
-      color: "blue",
+      demo: "",
+      color: "purple",
       Icon: TrendingDown,
     },
     {
@@ -29,16 +88,18 @@ export default function Home() {
       metrics: ["ROC-AUC: 84.60%", "Recall: 78.61%", "7,043 customers"],
       tags: ["Classification", "Customer Analytics", "Feature Engineering"],
       github: "https://github.com/sumaksharikaa/customer-churn-prediction",
-      color: "emerald",
+      demo: "",
+      color: "pink",
       Icon: BarChart3,
     },
     {
       title: "U.S. Maternal Mortality Analysis",
       subtitle: "Python • Tableau • Excel • CDC Data • PRAMS",
-      description: "M.S. capstone project analyzing the impact of COVID-19 on U.S. maternal mortality rates (2017–2023). Merged multi-source datasets (CDC VSRR, PRAMS, Pregnancy Mortality Surveillance Systems) to uncover racial, demographic, and socioeconomic disparities. MMR rose 51% during the pandemic (25.91 → 39.26). Correlation analysis revealed Adj. R²=0.941 between mortality ratio and year. Tableau dashboards exposed that American Indian/Alaska Native mothers face mortality rates nearly 4x higher than White mothers.",
+      description: "M.S. capstone project analyzing the impact of COVID-19 on U.S. maternal mortality rates (2017–2023). MMR rose 51% during the pandemic (25.91 → 39.26). Adj. R²=0.941 between mortality ratio and year.",
       metrics: ["MMR +51% (COVID)", "Adj. R² = 0.941", "2017–2023 data"],
-      tags: ["Healthcare Analytics", "EDA", "Correlation Analysis", "Tableau", "CDC Data"],
+      tags: ["Healthcare Analytics", "EDA", "Tableau", "CDC Data"],
       github: "https://github.com/sumaksharikaa/maternal-mortality-analysis",
+      demo: "",
       color: "pink",
       Icon: Activity,
     },
@@ -49,6 +110,7 @@ export default function Home() {
       metrics: ["Coming Soon", "In Progress"],
       tags: ["dbt", "SQL", "Snowflake", "Data Modeling"],
       github: "",
+      demo: "",
       color: "purple",
       Icon: Brain,
       comingSoon: true,
@@ -82,118 +144,67 @@ export default function Home() {
   ];
 
   const skills = [
-    {
-      category: "Languages",
-      items: ["Python (Pandas, NumPy)", "SQL (CTEs, Window Functions)"],
-    },
-    {
-      category: "ML & Forecasting",
-      items: ["XGBoost", "ARIMA", "Prophet", "Random Forest", "Logistic Regression", "Feature Engineering", "MLflow"],
-    },
-    {
-      category: "Data Warehousing",
-      items: ["Snowflake", "Azure", "ETL Pipelines", "Star Schema", "Data Modeling"],
-    },
-    {
-      category: "Visualization",
-      items: ["Tableau", "Power BI", "Executive Dashboards", "KPI Reporting"],
-    },
-    {
-      category: "Analytics Methods",
-      items: ["EDA", "Cohort Analysis", "Customer Segmentation", "Time-Series Analysis", "Variance Analysis"],
-    },
-    {
-      category: "Tools & Platforms",
-      items: ["Confluence", "MLflow", "PySpark (exposure)", "Git", "Google Colab"],
-    },
+    { category: "Languages", items: ["Python (Pandas, NumPy)", "SQL (CTEs, Window Functions)"] },
+    { category: "ML & NLP", items: ["XGBoost", "FinBERT", "HuggingFace", "ARIMA", "Prophet", "Random Forest", "MLflow"] },
+    { category: "Data Warehousing", items: ["PostgreSQL", "Snowflake", "Azure", "ETL Pipelines", "Data Modeling"] },
+    { category: "Visualization", items: ["Streamlit", "Tableau", "Power BI", "Executive Dashboards"] },
+    { category: "Analytics Methods", items: ["EDA", "Credit Risk", "Sentiment Analysis", "Time-Series", "Cohort Analysis"] },
+    { category: "Tools & Platforms", items: ["Git", "GitHub", "Vercel", "Streamlit Cloud", "Google Colab", "MLflow"] },
   ];
 
   const education = [
-    {
-      institution: "University of North Carolina at Charlotte",
-      degree: "M.S. Health Informatics and Analytics",
-      period: "08/2023 – 05/2025",
-    },
-    {
-      institution: "Koneru Lakshmaiah University",
-      degree: "Bachelor of Pharmacy",
-      period: "08/2018 – 05/2022",
-    },
+    { institution: "University of North Carolina at Charlotte", degree: "M.S. Health Informatics and Analytics", period: "08/2023 – 05/2025" },
+    { institution: "Koneru Lakshmaiah University", degree: "Bachelor of Pharmacy", period: "08/2018 – 05/2022" },
   ];
-
-  const colorMap: Record<string, string> = {
-    blue: "blue",
-    emerald: "emerald",
-    purple: "purple",
-  };
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-gray-300 selection:bg-blue-500/30 relative overflow-hidden font-sans">
-      {/* GLOBAL GRAPHICS: Floating Orbs */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] opacity-40 animate-pulse" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-emerald-600/10 rounded-full blur-[120px] opacity-30" />
         <div className="absolute top-[40%] right-[20%] w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px] opacity-20" />
       </div>
 
-      {/* Navigation Bar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="text-2xl font-bold text-white tracking-tight cursor-pointer">
             Sumaksharika<span className="text-blue-500">.</span>
           </div>
           <div className="flex items-center gap-6">
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
-            >
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
               <Download size={18} /> Resume
             </a>
-            <a
-              href="mailto:sumaksharika.n@gmail.com"
-              className="px-6 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] active:scale-95"
-            >
+            <a href="mailto:sumaksharika.n@gmail.com" className="px-6 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] active:scale-95">
               Hire Me
             </a>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
+          <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="space-y-8">
             <div className="inline-block px-4 py-1.5 text-sm font-medium text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20">
               Available for new opportunities · Charlotte, NC
             </div>
             <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight leading-[1.1]">
               Data <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400">
-                Scientist.
-              </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400">Scientist.</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-xl leading-relaxed">
-              Building <span className="text-white">demand forecasting models</span>,{" "}
-              <span className="text-white">ML pipelines</span>, and self-service BI solutions
+              Building <span className="text-white">credit risk models</span>,{" "}
+              <span className="text-white">NLP pipelines</span>, and self-service BI solutions
               that drive measurable business impact across Banking & Healthcare.
             </p>
 
-            {/* Real Stats */}
             <div className="grid grid-cols-3 gap-4 pt-2">
               <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
-                <div className="text-2xl font-bold text-blue-400">2.61%</div>
-                <div className="text-xs text-gray-500 mt-1">Best MAPE</div>
+                <div className="text-2xl font-bold text-blue-400">0.73</div>
+                <div className="text-xs text-gray-500 mt-1">AUC-ROC</div>
               </div>
               <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
-                <div className="text-2xl font-bold text-emerald-400">84.6%</div>
-                <div className="text-xs text-gray-500 mt-1">Best ROC-AUC</div>
+                <div className="text-2xl font-bold text-emerald-400">$34B</div>
+                <div className="text-xs text-gray-500 mt-1">Portfolio Analyzed</div>
               </div>
               <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
                 <div className="text-2xl font-bold text-purple-400">3+</div>
@@ -202,36 +213,17 @@ export default function Home() {
             </div>
 
             <div className="flex flex-wrap gap-4 pt-2">
-              <a
-                href="#projects"
-                className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors"
-              >
-                View Projects
-              </a>
-              <a
-                href="https://linkedin.com/in/sumaksharika"
-                target="_blank"
-                className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors text-white flex items-center gap-2"
-              >
+              <a href="#projects" className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors">View Projects</a>
+              <a href="https://linkedin.com/in/sumaksharika" target="_blank" className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors text-white flex items-center gap-2">
                 <Linkedin size={16} /> LinkedIn
               </a>
-              <a
-                href="https://github.com/sumaksharikaa"
-                target="_blank"
-                className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors text-white flex items-center gap-2"
-              >
+              <a href="https://github.com/sumaksharikaa" target="_blank" className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors text-white flex items-center gap-2">
                 <Github size={16} /> GitHub
               </a>
             </div>
           </motion.div>
 
-          {/* Terminal Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative hidden lg:block"
-          >
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="relative hidden lg:block">
             <div className="bg-[#0d1117] rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
               <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#161b22]">
                 <div className="w-3 h-3 rounded-full bg-red-500/70" />
@@ -240,27 +232,23 @@ export default function Home() {
                 <span className="ml-2 text-xs text-gray-500 font-mono">results.py</span>
               </div>
               <div className="p-6 font-mono text-sm space-y-1">
-                <div><span className="text-blue-400">$</span> <span className="text-white">python demand_forecasting.py</span></div>
-                <div className="text-gray-500">Training ARIMA(2,1,2)...</div>
-                <div><span className="text-emerald-400">✓ ARIMA</span> <span className="text-gray-400">MAPE:</span> <span className="text-yellow-400">4.71%</span></div>
-                <div className="text-gray-500">Training Prophet...</div>
-                <div><span className="text-emerald-400">✓ Prophet</span> <span className="text-gray-400">MAPE:</span> <span className="text-yellow-400">3.02%</span></div>
-                <div className="text-gray-500">Training XGBoost...</div>
-                <div><span className="text-emerald-400">✓ XGBoost</span> <span className="text-gray-400">MAPE:</span> <span className="text-yellow-400">2.61%</span> <span className="text-white">🏆</span></div>
-                <div className="pt-2"><span className="text-blue-400">$</span> <span className="text-white">python churn_prediction.py</span></div>
-                <div className="text-gray-500">Training models...</div>
-                <div><span className="text-emerald-400">✓ LogReg</span> <span className="text-gray-400">ROC-AUC:</span> <span className="text-yellow-400">84.60%</span> <span className="text-white">🏆</span></div>
-                <div><span className="text-emerald-400">✓ RandomForest</span> <span className="text-gray-400">ROC-AUC:</span> <span className="text-yellow-400">84.14%</span></div>
-                <div><span className="text-emerald-400">✓ XGBoost</span> <span className="text-gray-400">ROC-AUC:</span> <span className="text-yellow-400">83.94%</span></div>
-                <div className="pt-2 text-gray-500">Industry benchmark MAPE: 5–10%</div>
-                <div><span className="text-emerald-400">✓ Achieved:</span> <span className="text-yellow-400">2.61%</span> <span className="text-gray-500">(74% below benchmark)</span></div>
+                <div><span className="text-blue-400">$</span> <span className="text-white">python financial_risk.py</span></div>
+                <div className="text-gray-500">Loading 2,260,668 loans...</div>
+                <div><span className="text-emerald-400">✓ XGBoost</span> <span className="text-gray-400">AUC-ROC:</span> <span className="text-yellow-400">0.73</span> <span className="text-white">🏆</span></div>
+                <div><span className="text-emerald-400">✓ Portfolio:</span> <span className="text-yellow-400">$34B</span> <span className="text-gray-500">analyzed</span></div>
+                <div><span className="text-emerald-400">✓ Grade G default rate:</span> <span className="text-yellow-400">38.1%</span></div>
+                <div className="pt-2"><span className="text-blue-400">$</span> <span className="text-white">python earnings_nlp.py</span></div>
+                <div className="text-gray-500">Loading FinBERT model...</div>
+                <div><span className="text-emerald-400">✓ Analyzed</span> <span className="text-yellow-400">514</span> <span className="text-gray-400">transcripts</span></div>
+                <div><span className="text-emerald-400">✓ DIS Q3-2020:</span> <span className="text-yellow-400">-0.053</span> <span className="text-gray-500">(COVID impact)</span></div>
+                <div className="pt-2"><span className="text-blue-400">$</span> <span className="text-white">python demand_forecasting.py</span></div>
+                <div><span className="text-emerald-400">✓ XGBoost</span> <span className="text-gray-400">MAPE:</span> <span className="text-yellow-400">2.61%</span> <span className="text-gray-500">(74% below benchmark)</span></div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Projects Section */}
       <section id="projects" className="py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeInUp} className="mb-16 text-center">
@@ -278,15 +266,11 @@ export default function Home() {
                 transition={{ delay: idx * 0.1 }}
                 whileHover={{ y: -8 }}
                 className={`group relative bg-[#111] rounded-2xl overflow-hidden border transition-all flex flex-col ${
-                  project.comingSoon
-                    ? "border-white/5 opacity-70"
-                    : project.color === "blue"
-                    ? "border-white/5 hover:border-blue-500/50"
-                    : project.color === "emerald"
-                    ? "border-white/5 hover:border-emerald-500/50"
-                    : project.color === "pink"
-                    ? "border-white/5 hover:border-pink-500/50"
-                    : "border-white/5 hover:border-purple-500/50"
+                  project.comingSoon ? "border-white/5 opacity-70" :
+                  project.color === "blue" ? "border-white/5 hover:border-blue-500/50" :
+                  project.color === "emerald" ? "border-white/5 hover:border-emerald-500/50" :
+                  project.color === "pink" ? "border-white/5 hover:border-pink-500/50" :
+                  "border-white/5 hover:border-purple-500/50"
                 }`}
               >
                 <div className={`h-36 p-8 flex items-end bg-gradient-to-br ${
@@ -306,11 +290,10 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
                   <p className={`text-sm mb-3 ${
                     project.color === "blue" ? "text-blue-400" :
-                    project.color === "emerald" ? "text-emerald-400" : project.color === "pink" ? "text-pink-400" : "text-purple-400"
+                    project.color === "emerald" ? "text-emerald-400" :
+                    project.color === "pink" ? "text-pink-400" : "text-purple-400"
                   }`}>{project.subtitle}</p>
                   <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">{project.description}</p>
-
-                  {/* Metrics chips */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.metrics.map((m, i) => (
                       <span key={i} className={`text-xs px-2 py-1 rounded font-mono ${
@@ -321,26 +304,25 @@ export default function Home() {
                       }`}>{m}</span>
                     ))}
                   </div>
-
-                  {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-5">
                     {project.tags.map((tag, i) => (
                       <span key={i} className="px-2 py-1 bg-white/5 rounded text-xs text-gray-300">{tag}</span>
                     ))}
                   </div>
-
-                  {project.github ? (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors"
-                    >
-                      <Github size={16} /> View on GitHub <ExternalLink size={12} />
-                    </a>
-                  ) : (
-                    <span className="text-sm text-gray-600 italic">In progress...</span>
-                  )}
+                  <div className="flex gap-4">
+                    {project.github ? (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors">
+                        <Github size={16} /> GitHub <ExternalLink size={12} />
+                      </a>
+                    ) : (
+                      <span className="text-sm text-gray-600 italic">In progress...</span>
+                    )}
+                    {project.demo && (
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
+                        Live Demo <ExternalLink size={12} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -348,22 +330,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience Section */}
       <section className="py-32 px-6 max-w-5xl mx-auto">
         <motion.div {...fadeInUp} className="mb-16 text-center">
           <p className="text-blue-400 font-mono text-sm tracking-widest uppercase mb-3">// where I&apos;ve worked</p>
           <h2 className="text-4xl font-bold text-white">Professional Journey</h2>
         </motion.div>
-
         <div className="space-y-12 relative before:absolute before:left-[19px] md:before:left-1/2 before:top-0 before:bottom-0 before:w-[2px] before:bg-gradient-to-b before:from-blue-500 before:via-purple-500 before:to-emerald-500 before:opacity-20">
           {experience.map((job, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className={`relative flex flex-col md:flex-row gap-8 ${idx % 2 === 0 ? "md:flex-row-reverse" : ""}`}
-            >
+            <motion.div key={idx} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className={`relative flex flex-col md:flex-row gap-8 ${idx % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
               <div className="absolute left-0 md:left-1/2 w-10 h-10 -translate-x-1/2 flex items-center justify-center z-10">
                 <div className="w-4 h-4 bg-[#0a0a0a] border-2 border-blue-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]" />
               </div>
@@ -374,13 +348,9 @@ export default function Home() {
                       <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">{job.role}</h3>
                       <div className="text-blue-400 font-medium">{job.company}</div>
                     </div>
-                    <div className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-400 font-mono border border-white/5 whitespace-nowrap">
-                      {job.period}
-                    </div>
+                    <div className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-400 font-mono border border-white/5 whitespace-nowrap">{job.period}</div>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
-                    <MapPin size={14} /> {job.location}
-                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-500 mb-6"><MapPin size={14} /> {job.location}</div>
                   <ul className="space-y-3 text-gray-400 text-sm">
                     {job.achievements.map((bullet, bIdx) => (
                       <li key={bIdx} className="flex gap-3">
@@ -397,7 +367,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills & Education Grid */}
       <section className="py-32 px-6 bg-white/5 border-y border-white/5">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
           <div>
@@ -415,7 +384,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-
           <div>
             <h2 className="text-3xl font-bold text-white mb-10">Education</h2>
             <div className="space-y-6">
@@ -429,7 +397,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-
             <div className="mt-8">
               <h3 className="text-white font-semibold mb-4">Certifications</h3>
               <div className="space-y-3">
@@ -445,41 +412,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer / CTA */}
       <section className="py-32 px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          className="max-w-3xl mx-auto bg-gradient-to-br from-blue-900/20 to-emerald-900/20 p-12 rounded-3xl border border-white/10"
-        >
+        <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} className="max-w-3xl mx-auto bg-gradient-to-br from-blue-900/20 to-emerald-900/20 p-12 rounded-3xl border border-white/10">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let&apos;s build something together.</h2>
-          <p className="text-xl text-gray-400 mb-10">
-            Actively targeting Senior Data Scientist and Lead Analyst roles in Charlotte, NC.
-          </p>
+          <p className="text-xl text-gray-400 mb-10">Actively targeting Senior Data Scientist and Lead Analyst roles in Charlotte, NC.</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href="mailto:sumaksharika.n@gmail.com"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors"
-            >
+            <a href="mailto:sumaksharika.n@gmail.com" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors">
               <Mail size={20} /> Get in Touch
             </a>
-            <a
-              href="https://github.com/sumaksharikaa"
-              target="_blank"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-colors border border-white/10"
-            >
+            <a href="https://github.com/sumaksharikaa" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-colors border border-white/10">
               <Github size={20} /> GitHub
             </a>
-            <a
-              href="https://linkedin.com/in/sumaksharika"
-              target="_blank"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors"
-            >
+            <a href="https://linkedin.com/in/sumaksharika" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors">
               <Linkedin size={20} /> LinkedIn
             </a>
           </div>
         </motion.div>
-
         <footer className="mt-20 text-gray-600 text-sm">
           <p>© {new Date().getFullYear()} Sumaksharika Nainavarapu. All rights reserved.</p>
         </footer>
