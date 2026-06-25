@@ -147,7 +147,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="space-y-8">
             <div className="inline-block px-4 py-1.5 text-sm font-medium text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20">
-              Available for new opportunities · Charlotte, NC
+              Available for new opportunities · Open to USA
             </div>
             <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight leading-[1.1]">
               Data <br />
@@ -367,7 +367,7 @@ export default function Home() {
       <section className="py-32 px-6 text-center">
         <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} className="max-w-3xl mx-auto bg-gradient-to-br from-blue-900/20 to-emerald-900/20 p-12 rounded-3xl border border-white/10">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let&apos;s build something together.</h2>
-          <p className="text-xl text-gray-400 mb-10">Actively targeting Senior Data Scientist and Lead Analyst roles in Charlotte, NC.</p>
+          <p className="text-xl text-gray-400 mb-10">Actively targeting Senior Data Scientist and Lead Analyst roles across the United States.</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="mailto:sumaksharika.n@gmail.com" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors"><Mail size={20} /> Get in Touch</a>
             <a href="https://github.com/sumaksharikaa" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-colors border border-white/10"><Github size={20} /> GitHub</a>
