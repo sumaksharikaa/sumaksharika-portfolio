@@ -14,7 +14,7 @@ export default function Home() {
   const projects = [
     {
       title: "Financial Risk Dashboard",
-      subtitle: "PostgreSQL \u2022 Python \u2022 XGBoost \u2022 Streamlit",
+      subtitle: "PostgreSQL • Python • XGBoost • Streamlit",
       description: "End-to-end credit risk analytics pipeline on 2.26M Lending Club loans ($34B portfolio). XGBoost default prediction model achieving AUC-ROC of 0.73. Interactive Streamlit dashboard with real-time filters deployed publicly.",
       metrics: ["AUC-ROC: 0.73", "$34B portfolio", "2.26M loans"],
       tags: ["Credit Risk", "SQL", "XGBoost", "Streamlit"],
@@ -25,7 +25,7 @@ export default function Home() {
     },
     {
       title: "Earnings Call NLP Analyzer",
-      subtitle: "FinBERT \u2022 HuggingFace \u2022 Python \u2022 Streamlit",
+      subtitle: "FinBERT • HuggingFace • Python • Streamlit",
       description: "FinBERT sentiment analysis on 514 earnings call transcripts from 30 S&P 500 companies across 8 sectors. Detected COVID-19 impact (Disney Q3 2020 negative sentiment) and identified risk language patterns.",
       metrics: ["514 transcripts", "30 companies", "8 sectors"],
       tags: ["NLP", "FinBERT", "Sentiment Analysis", "Finance"],
@@ -36,8 +36,8 @@ export default function Home() {
     },
     {
       title: "Retail Demand Forecasting",
-      subtitle: "Python \u2022 ARIMA \u2022 Prophet \u2022 XGBoost \u2022 MLflow",
-      description: "End-to-end demand forecasting pipeline on real Walmart weekly sales data. XGBoost achieved 2.61% MAPE \u2014 74% below the industry benchmark of 5\u201310%. Includes promotional uplift modeling and MLflow experiment tracking.",
+      subtitle: "Python • ARIMA • Prophet • XGBoost • MLflow",
+      description: "End-to-end demand forecasting pipeline on real Walmart weekly sales data. XGBoost achieved 2.61% MAPE — 74% below the industry benchmark of 5–10%. Includes promotional uplift modeling and MLflow experiment tracking.",
       metrics: ["MAPE: 2.61%", "MAE: $39,864", "143 weeks data"],
       tags: ["Time-Series", "Forecasting", "Feature Engineering"],
       github: "https://github.com/sumaksharikaa/retail-demand-forecasting",
@@ -47,8 +47,8 @@ export default function Home() {
     },
     {
       title: "Customer Churn Prediction",
-      subtitle: "Python \u2022 Scikit-learn \u2022 XGBoost \u2022 Random Forest \u2022 MLflow",
-      description: "ML classification project predicting telecom customer churn on 7,043 real customers. Logistic Regression achieved best ROC-AUC of 84.60% with recall of 78.61% \u2014 correctly identifying 4 out of 5 at-risk customers.",
+      subtitle: "Python • Scikit-learn • XGBoost • Random Forest • MLflow",
+      description: "ML classification project predicting telecom customer churn on 7,043 real customers. Logistic Regression achieved best ROC-AUC of 84.60% with recall of 78.61% — correctly identifying 4 out of 5 at-risk customers.",
       metrics: ["ROC-AUC: 84.60%", "Recall: 78.61%", "7,043 customers"],
       tags: ["Classification", "Customer Analytics", "Feature Engineering"],
       github: "https://github.com/sumaksharikaa/customer-churn-prediction",
@@ -58,9 +58,9 @@ export default function Home() {
     },
     {
       title: "U.S. Maternal Mortality Analysis",
-      subtitle: "Python \u2022 Tableau \u2022 Excel \u2022 CDC Data \u2022 PRAMS",
-      description: "M.S. capstone project analyzing the impact of COVID-19 on U.S. maternal mortality rates (2017\u20132023). MMR rose 51% during the pandemic (25.91 \u2192 39.26). Adj. R\u00b2=0.941 between mortality ratio and year.",
-      metrics: ["MMR +51% (COVID)", "Adj. R\u00b2 = 0.941", "2017\u20132023 data"],
+      subtitle: "Python • Tableau • Excel • CDC Data • PRAMS",
+      description: "M.S. capstone project analyzing the impact of COVID-19 on U.S. maternal mortality rates (2017–2023). MMR rose 51% during the pandemic (25.91 → 39.26). Adj. R²=0.941 between mortality ratio and year.",
+      metrics: ["MMR +51% (COVID)", "Adj. R² = 0.941", "2017–2023 data"],
       tags: ["Healthcare Analytics", "EDA", "Tableau", "CDC Data"],
       github: "https://github.com/sumaksharikaa/maternal-mortality-analysis",
       demo: "",
@@ -69,7 +69,7 @@ export default function Home() {
     },
     {
       title: "SQL Analytics & dbt Project",
-      subtitle: "SQL \u2022 dbt \u2022 Snowflake \u2022 Data Modeling",
+      subtitle: "SQL • dbt • Snowflake • Data Modeling",
       description: "End-to-end analytics engineering project using dbt + SQL to build modular data models, tests, and documentation on a real business dataset. Targeting banking and retail analytics use cases.",
       metrics: ["Coming Soon", "In Progress"],
       tags: ["dbt", "SQL", "Snowflake", "Data Modeling"],
@@ -85,7 +85,7 @@ export default function Home() {
     {
       role: "Data Scientist / Data Analyst",
       company: "HSBC",
-      period: "10/2024 \u2013 Present",
+      period: "10/2024 – Present",
       location: "Remote, USA",
       achievements: [
         "Built time-series and ML forecasting models to predict customer behavioral trends, supporting demand planning and business forecasting use cases.",
@@ -97,7 +97,7 @@ export default function Home() {
     {
       role: "Data Analyst / Data Scientist",
       company: "TCS",
-      period: "01/2021 \u2013 08/2023",
+      period: "01/2021 – 08/2023",
       location: "Andhra Pradesh, India",
       achievements: [
         "Built predictive models for clinical risk stratification contributing to a 22% reduction in 30-day readmissions.",
@@ -115,8 +115,8 @@ export default function Home() {
   ];
 
   const education = [
-    { institution: "University of North Carolina at Charlotte", degree: "M.S. Health Informatics and Analytics", period: "08/2023 \u2013 05/2025" },
-    { institution: "Koneru Lakshmaiah University", degree: "Bachelor of Pharmacy", period: "08/2018 \u2013 05/2022" },
+    { institution: "University of North Carolina at Charlotte", degree: "M.S. Health Informatics and Analytics", period: "08/2023 – 05/2025" },
+    { institution: "Koneru Lakshmaiah University", degree: "Bachelor of Pharmacy", period: "08/2018 – 05/2022" },
   ];
 
   return (
@@ -147,7 +147,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="space-y-8">
             <div className="inline-block px-4 py-1.5 text-sm font-medium text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20">
-              Available for new opportunities \u00b7 Charlotte, NC
+              Available for new opportunities · Charlotte, NC
             </div>
             <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight leading-[1.1]">
               Data <br />
@@ -189,13 +189,13 @@ export default function Home() {
               <div className="p-6 font-mono text-sm space-y-1">
                 <div><span className="text-blue-400">$</span> <span className="text-white">python financial_risk.py</span></div>
                 <div className="text-gray-500">Loading 2,260,668 loans...</div>
-                <div><span className="text-emerald-400">\u2713 XGBoost</span> <span className="text-gray-400">AUC-ROC:</span> <span className="text-yellow-400">0.73</span> <span className="text-white">\U0001f3c6</span></div>
-                <div><span className="text-emerald-400">\u2713 Portfolio:</span> <span className="text-yellow-400">$34B</span> <span className="text-gray-500">analyzed</span></div>
+                <div><span className="text-emerald-400">✓ XGBoost</span> <span className="text-gray-400">AUC-ROC:</span> <span className="text-yellow-400">0.73</span> <span className="text-white">🏆</span></div>
+                <div><span className="text-emerald-400">✓ Portfolio:</span> <span className="text-yellow-400">$34B</span> <span className="text-gray-500">analyzed</span></div>
                 <div className="pt-2"><span className="text-blue-400">$</span> <span className="text-white">python earnings_nlp.py</span></div>
                 <div className="text-gray-500">Loading FinBERT model...</div>
-                <div><span className="text-emerald-400">\u2713 Analyzed</span> <span className="text-yellow-400">514</span> <span className="text-gray-400">transcripts</span></div>
+                <div><span className="text-emerald-400">✓ Analyzed</span> <span className="text-yellow-400">514</span> <span className="text-gray-400">transcripts</span></div>
                 <div className="pt-2"><span className="text-blue-400">$</span> <span className="text-white">python demand_forecasting.py</span></div>
-                <div><span className="text-emerald-400">\u2713 XGBoost</span> <span className="text-gray-400">MAPE:</span> <span className="text-yellow-400">2.61%</span> <span className="text-gray-500">(74% below benchmark)</span></div>
+                <div><span className="text-emerald-400">✓ XGBoost</span> <span className="text-gray-400">MAPE:</span> <span className="text-yellow-400">2.61%</span> <span className="text-gray-500">(74% below benchmark)</span></div>
               </div>
             </div>
           </motion.div>
@@ -375,7 +375,7 @@ export default function Home() {
           </div>
         </motion.div>
         <footer className="mt-20 text-gray-600 text-sm">
-          <p>\u00a9 {new Date().getFullYear()} Sumaksharika Nainavarapu. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Sumaksharika Nainavarapu. All rights reserved.</p>
         </footer>
       </section>
     </main>
