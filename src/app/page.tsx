@@ -14,7 +14,7 @@ export default function Home() {
   const projects = [
     {
       title: "Financial Risk Dashboard",
-      subtitle: "PostgreSQL • Python • XGBoost • Streamlit",
+      subtitle: "PostgreSQL \u2022 Python \u2022 XGBoost \u2022 Streamlit",
       description: "End-to-end credit risk analytics pipeline on 2.26M Lending Club loans ($34B portfolio). XGBoost default prediction model achieving AUC-ROC of 0.73. Interactive Streamlit dashboard with real-time filters deployed publicly.",
       metrics: ["AUC-ROC: 0.73", "$34B portfolio", "2.26M loans"],
       tags: ["Credit Risk", "SQL", "XGBoost", "Streamlit"],
@@ -25,44 +25,8 @@ export default function Home() {
     },
     {
       title: "Earnings Call NLP Analyzer",
-      subtitle: "FinBERT • HuggingFace • Python • Streamlit",
-      description: "FinBERT sentiment analysis on 514 earnings call transcripts from 30 S&P 500 companies across 8 sectors. Detected COVID-19 impact (Disney Q3 2020 negative sentiment) and identified risk language patterns across Finance, Tech, and Healthcare.",
-      metrics: ["514 transcripts", "30 companies", "8 sectors"],
-      tags: ["NLP", "FinBERT", "Sentiment Analysis", "Finance"],
-      github: "https://github.com/sumaksharikaa/earnings-call-nlp",
-      demo: "https://earnings-call-nlp-hpvrwqwv6rrtxknzwt2seb.streamlit.app",
-      color: "emerald",
-      Icon:
-cat > ~/sumaksharika-portfolio/src/app/page.tsx << 'ENDOFFILE'
-"use client";
-
-import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin, ExternalLink, Download, BarChart3, TrendingDown, Brain, Activity, DollarSign, MessageSquare } from "lucide-react";
-
-export default function Home() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 30 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 },
-    viewport: { once: true }
-  };
-
-  const projects = [
-    {
-      title: "Financial Risk Dashboard",
-      subtitle: "PostgreSQL • Python • XGBoost • Streamlit",
-      description: "End-to-end credit risk analytics pipeline on 2.26M Lending Club loans ($34B portfolio). XGBoost default prediction model achieving AUC-ROC of 0.73. Interactive Streamlit dashboard with real-time filters deployed publicly.",
-      metrics: ["AUC-ROC: 0.73", "$34B portfolio", "2.26M loans"],
-      tags: ["Credit Risk", "SQL", "XGBoost", "Streamlit"],
-      github: "https://github.com/sumaksharikaa/financial-risk-dashboard",
-      demo: "https://financial-risk-dashboard-ovjmqv7edtxfdeczx8zctv.streamlit.app",
-      color: "blue",
-      Icon: DollarSign,
-    },
-    {
-      title: "Earnings Call NLP Analyzer",
-      subtitle: "FinBERT • HuggingFace • Python • Streamlit",
-      description: "FinBERT sentiment analysis on 514 earnings call transcripts from 30 S&P 500 companies across 8 sectors. Detected COVID-19 impact (Disney Q3 2020 negative sentiment) and identified risk language patterns across Finance, Tech, and Healthcare.",
+      subtitle: "FinBERT \u2022 HuggingFace \u2022 Python \u2022 Streamlit",
+      description: "FinBERT sentiment analysis on 514 earnings call transcripts from 30 S&P 500 companies across 8 sectors. Detected COVID-19 impact (Disney Q3 2020 negative sentiment) and identified risk language patterns.",
       metrics: ["514 transcripts", "30 companies", "8 sectors"],
       tags: ["NLP", "FinBERT", "Sentiment Analysis", "Finance"],
       github: "https://github.com/sumaksharikaa/earnings-call-nlp",
@@ -72,8 +36,8 @@ export default function Home() {
     },
     {
       title: "Retail Demand Forecasting",
-      subtitle: "Python • ARIMA • Prophet • XGBoost • MLflow",
-      description: "End-to-end demand forecasting pipeline on real Walmart weekly sales data. XGBoost achieved 2.61% MAPE — 74% below the industry benchmark of 5–10%. Includes promotional uplift modeling and MLflow experiment tracking.",
+      subtitle: "Python \u2022 ARIMA \u2022 Prophet \u2022 XGBoost \u2022 MLflow",
+      description: "End-to-end demand forecasting pipeline on real Walmart weekly sales data. XGBoost achieved 2.61% MAPE \u2014 74% below the industry benchmark of 5\u201310%. Includes promotional uplift modeling and MLflow experiment tracking.",
       metrics: ["MAPE: 2.61%", "MAE: $39,864", "143 weeks data"],
       tags: ["Time-Series", "Forecasting", "Feature Engineering"],
       github: "https://github.com/sumaksharikaa/retail-demand-forecasting",
@@ -83,8 +47,8 @@ export default function Home() {
     },
     {
       title: "Customer Churn Prediction",
-      subtitle: "Python • Scikit-learn • XGBoost • Random Forest • MLflow",
-      description: "ML classification project predicting telecom customer churn on 7,043 real customers. Logistic Regression achieved best ROC-AUC of 84.60% with recall of 78.61% — correctly identifying 4 out of 5 at-risk customers.",
+      subtitle: "Python \u2022 Scikit-learn \u2022 XGBoost \u2022 Random Forest \u2022 MLflow",
+      description: "ML classification project predicting telecom customer churn on 7,043 real customers. Logistic Regression achieved best ROC-AUC of 84.60% with recall of 78.61% \u2014 correctly identifying 4 out of 5 at-risk customers.",
       metrics: ["ROC-AUC: 84.60%", "Recall: 78.61%", "7,043 customers"],
       tags: ["Classification", "Customer Analytics", "Feature Engineering"],
       github: "https://github.com/sumaksharikaa/customer-churn-prediction",
@@ -94,9 +58,9 @@ export default function Home() {
     },
     {
       title: "U.S. Maternal Mortality Analysis",
-      subtitle: "Python • Tableau • Excel • CDC Data • PRAMS",
-      description: "M.S. capstone project analyzing the impact of COVID-19 on U.S. maternal mortality rates (2017–2023). MMR rose 51% during the pandemic (25.91 → 39.26). Adj. R²=0.941 between mortality ratio and year.",
-      metrics: ["MMR +51% (COVID)", "Adj. R² = 0.941", "2017–2023 data"],
+      subtitle: "Python \u2022 Tableau \u2022 Excel \u2022 CDC Data \u2022 PRAMS",
+      description: "M.S. capstone project analyzing the impact of COVID-19 on U.S. maternal mortality rates (2017\u20132023). MMR rose 51% during the pandemic (25.91 \u2192 39.26). Adj. R\u00b2=0.941 between mortality ratio and year.",
+      metrics: ["MMR +51% (COVID)", "Adj. R\u00b2 = 0.941", "2017\u20132023 data"],
       tags: ["Healthcare Analytics", "EDA", "Tableau", "CDC Data"],
       github: "https://github.com/sumaksharikaa/maternal-mortality-analysis",
       demo: "",
@@ -105,7 +69,7 @@ export default function Home() {
     },
     {
       title: "SQL Analytics & dbt Project",
-      subtitle: "SQL • dbt • Snowflake • Data Modeling",
+      subtitle: "SQL \u2022 dbt \u2022 Snowflake \u2022 Data Modeling",
       description: "End-to-end analytics engineering project using dbt + SQL to build modular data models, tests, and documentation on a real business dataset. Targeting banking and retail analytics use cases.",
       metrics: ["Coming Soon", "In Progress"],
       tags: ["dbt", "SQL", "Snowflake", "Data Modeling"],
@@ -121,7 +85,7 @@ export default function Home() {
     {
       role: "Data Scientist / Data Analyst",
       company: "HSBC",
-      period: "10/2024 – Present",
+      period: "10/2024 \u2013 Present",
       location: "Remote, USA",
       achievements: [
         "Built time-series and ML forecasting models to predict customer behavioral trends, supporting demand planning and business forecasting use cases.",
@@ -133,7 +97,7 @@ export default function Home() {
     {
       role: "Data Analyst / Data Scientist",
       company: "TCS",
-      period: "01/2021 – 08/2023",
+      period: "01/2021 \u2013 08/2023",
       location: "Andhra Pradesh, India",
       achievements: [
         "Built predictive models for clinical risk stratification contributing to a 22% reduction in 30-day readmissions.",
@@ -148,13 +112,11 @@ export default function Home() {
     { category: "ML & NLP", items: ["XGBoost", "FinBERT", "HuggingFace", "ARIMA", "Prophet", "Random Forest", "MLflow"] },
     { category: "Data Warehousing", items: ["PostgreSQL", "Snowflake", "Azure", "ETL Pipelines", "Data Modeling"] },
     { category: "Visualization", items: ["Streamlit", "Tableau", "Power BI", "Executive Dashboards"] },
-    { category: "Analytics Methods", items: ["EDA", "Credit Risk", "Sentiment Analysis", "Time-Series", "Cohort Analysis"] },
-    { category: "Tools & Platforms", items: ["Git", "GitHub", "Vercel", "Streamlit Cloud", "Google Colab", "MLflow"] },
   ];
 
   const education = [
-    { institution: "University of North Carolina at Charlotte", degree: "M.S. Health Informatics and Analytics", period: "08/2023 – 05/2025" },
-    { institution: "Koneru Lakshmaiah University", degree: "Bachelor of Pharmacy", period: "08/2018 – 05/2022" },
+    { institution: "University of North Carolina at Charlotte", degree: "M.S. Health Informatics and Analytics", period: "08/2023 \u2013 05/2025" },
+    { institution: "Koneru Lakshmaiah University", degree: "Bachelor of Pharmacy", period: "08/2018 \u2013 05/2022" },
   ];
 
   return (
@@ -185,7 +147,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="space-y-8">
             <div className="inline-block px-4 py-1.5 text-sm font-medium text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20">
-              Available for new opportunities · Charlotte, NC
+              Available for new opportunities \u00b7 Charlotte, NC
             </div>
             <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight leading-[1.1]">
               Data <br />
@@ -193,10 +155,8 @@ export default function Home() {
             </h1>
             <p className="text-xl text-gray-400 max-w-xl leading-relaxed">
               Building <span className="text-white">credit risk models</span>,{" "}
-              <span className="text-white">NLP pipelines</span>, and self-service BI solutions
-              that drive measurable business impact across Banking & Healthcare.
+              <span className="text-white">NLP pipelines</span>, and self-service BI solutions that drive measurable business impact across Banking & Healthcare.
             </p>
-
             <div className="grid grid-cols-3 gap-4 pt-2">
               <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
                 <div className="text-2xl font-bold text-blue-400">0.73</div>
@@ -211,15 +171,10 @@ export default function Home() {
                 <div className="text-xs text-gray-500 mt-1">Yrs Experience</div>
               </div>
             </div>
-
             <div className="flex flex-wrap gap-4 pt-2">
               <a href="#projects" className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors">View Projects</a>
-              <a href="https://linkedin.com/in/sumaksharika" target="_blank" className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors text-white flex items-center gap-2">
-                <Linkedin size={16} /> LinkedIn
-              </a>
-              <a href="https://github.com/sumaksharikaa" target="_blank" className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors text-white flex items-center gap-2">
-                <Github size={16} /> GitHub
-              </a>
+              <a href="https://linkedin.com/in/sumaksharika" target="_blank" className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors text-white flex items-center gap-2"><Linkedin size={16} /> LinkedIn</a>
+              <a href="https://github.com/sumaksharikaa" target="_blank" className="px-8 py-4 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors text-white flex items-center gap-2"><Github size={16} /> GitHub</a>
             </div>
           </motion.div>
 
@@ -234,15 +189,13 @@ export default function Home() {
               <div className="p-6 font-mono text-sm space-y-1">
                 <div><span className="text-blue-400">$</span> <span className="text-white">python financial_risk.py</span></div>
                 <div className="text-gray-500">Loading 2,260,668 loans...</div>
-                <div><span className="text-emerald-400">✓ XGBoost</span> <span className="text-gray-400">AUC-ROC:</span> <span className="text-yellow-400">0.73</span> <span className="text-white">🏆</span></div>
-                <div><span className="text-emerald-400">✓ Portfolio:</span> <span className="text-yellow-400">$34B</span> <span className="text-gray-500">analyzed</span></div>
-                <div><span className="text-emerald-400">✓ Grade G default rate:</span> <span className="text-yellow-400">38.1%</span></div>
+                <div><span className="text-emerald-400">\u2713 XGBoost</span> <span className="text-gray-400">AUC-ROC:</span> <span className="text-yellow-400">0.73</span> <span className="text-white">\U0001f3c6</span></div>
+                <div><span className="text-emerald-400">\u2713 Portfolio:</span> <span className="text-yellow-400">$34B</span> <span className="text-gray-500">analyzed</span></div>
                 <div className="pt-2"><span className="text-blue-400">$</span> <span className="text-white">python earnings_nlp.py</span></div>
                 <div className="text-gray-500">Loading FinBERT model...</div>
-                <div><span className="text-emerald-400">✓ Analyzed</span> <span className="text-yellow-400">514</span> <span className="text-gray-400">transcripts</span></div>
-                <div><span className="text-emerald-400">✓ DIS Q3-2020:</span> <span className="text-yellow-400">-0.053</span> <span className="text-gray-500">(COVID impact)</span></div>
+                <div><span className="text-emerald-400">\u2713 Analyzed</span> <span className="text-yellow-400">514</span> <span className="text-gray-400">transcripts</span></div>
                 <div className="pt-2"><span className="text-blue-400">$</span> <span className="text-white">python demand_forecasting.py</span></div>
-                <div><span className="text-emerald-400">✓ XGBoost</span> <span className="text-gray-400">MAPE:</span> <span className="text-yellow-400">2.61%</span> <span className="text-gray-500">(74% below benchmark)</span></div>
+                <div><span className="text-emerald-400">\u2713 XGBoost</span> <span className="text-gray-400">MAPE:</span> <span className="text-yellow-400">2.61%</span> <span className="text-gray-500">(74% below benchmark)</span></div>
               </div>
             </div>
           </motion.div>
@@ -255,7 +208,6 @@ export default function Home() {
             <p className="text-blue-400 font-mono text-sm tracking-widest uppercase mb-3">// what I&apos;ve built</p>
             <h2 className="text-4xl font-bold text-white">Featured Projects</h2>
           </motion.div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, idx) => (
               <motion.div
@@ -265,43 +217,43 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
                 whileHover={{ y: -8 }}
-                className={`group relative bg-[#111] rounded-2xl overflow-hidden border transition-all flex flex-col ${
+                className={"group relative bg-[#111] rounded-2xl overflow-hidden border transition-all flex flex-col " + (
                   project.comingSoon ? "border-white/5 opacity-70" :
                   project.color === "blue" ? "border-white/5 hover:border-blue-500/50" :
                   project.color === "emerald" ? "border-white/5 hover:border-emerald-500/50" :
                   project.color === "pink" ? "border-white/5 hover:border-pink-500/50" :
                   "border-white/5 hover:border-purple-500/50"
-                }`}
+                )}
               >
-                <div className={`h-36 p-8 flex items-end bg-gradient-to-br ${
+                <div className={"h-36 p-8 flex items-end bg-gradient-to-br " + (
                   project.color === "blue" ? "from-blue-900/20 to-black" :
                   project.color === "emerald" ? "from-emerald-900/20 to-black" :
                   project.color === "pink" ? "from-pink-900/20 to-black" :
                   "from-purple-900/20 to-black"
-                }`}>
-                  <project.Icon size={40} className={`${
+                )}>
+                  <project.Icon size={40} className={(
                     project.color === "blue" ? "text-blue-500/50 group-hover:text-blue-400" :
                     project.color === "emerald" ? "text-emerald-500/50 group-hover:text-emerald-400" :
                     project.color === "pink" ? "text-pink-500/50 group-hover:text-pink-400" :
                     "text-purple-500/50 group-hover:text-purple-400"
-                  } transition-colors`} />
+                  ) + " transition-colors"} />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
-                  <p className={`text-sm mb-3 ${
+                  <p className={"text-sm mb-3 " + (
                     project.color === "blue" ? "text-blue-400" :
                     project.color === "emerald" ? "text-emerald-400" :
                     project.color === "pink" ? "text-pink-400" : "text-purple-400"
-                  }`}>{project.subtitle}</p>
+                  )}>{project.subtitle}</p>
                   <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.metrics.map((m, i) => (
-                      <span key={i} className={`text-xs px-2 py-1 rounded font-mono ${
+                      <span key={i} className={"text-xs px-2 py-1 rounded font-mono " + (
                         project.color === "blue" ? "bg-blue-500/10 text-blue-300" :
                         project.color === "emerald" ? "bg-emerald-500/10 text-emerald-300" :
                         project.color === "pink" ? "bg-pink-500/10 text-pink-300" :
                         "bg-purple-500/10 text-purple-300"
-                      }`}>{m}</span>
+                      )}>{m}</span>
                     ))}
                   </div>
                   <div className="flex flex-wrap gap-2 mb-5">
@@ -337,7 +289,7 @@ export default function Home() {
         </motion.div>
         <div className="space-y-12 relative before:absolute before:left-[19px] md:before:left-1/2 before:top-0 before:bottom-0 before:w-[2px] before:bg-gradient-to-b before:from-blue-500 before:via-purple-500 before:to-emerald-500 before:opacity-20">
           {experience.map((job, idx) => (
-            <motion.div key={idx} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className={`relative flex flex-col md:flex-row gap-8 ${idx % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
+            <motion.div key={idx} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className={"relative flex flex-col md:flex-row gap-8 " + (idx % 2 === 0 ? "md:flex-row-reverse" : "")}>
               <div className="absolute left-0 md:left-1/2 w-10 h-10 -translate-x-1/2 flex items-center justify-center z-10">
                 <div className="w-4 h-4 bg-[#0a0a0a] border-2 border-blue-500 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]" />
               </div>
@@ -372,7 +324,7 @@ export default function Home() {
           <div>
             <h2 className="text-3xl font-bold text-white mb-10">Technical Arsenal</h2>
             <div className="grid grid-cols-2 gap-4">
-              {skills.slice(0, 4).map((grp, i) => (
+              {skills.map((grp, i) => (
                 <div key={i} className="p-4 bg-black/40 border border-white/10 rounded-xl">
                   <h3 className="text-white font-semibold mb-3">{grp.category}</h3>
                   <div className="flex flex-wrap gap-2">
@@ -417,19 +369,13 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let&apos;s build something together.</h2>
           <p className="text-xl text-gray-400 mb-10">Actively targeting Senior Data Scientist and Lead Analyst roles in Charlotte, NC.</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="mailto:sumaksharika.n@gmail.com" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors">
-              <Mail size={20} /> Get in Touch
-            </a>
-            <a href="https://github.com/sumaksharikaa" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-colors border border-white/10">
-              <Github size={20} /> GitHub
-            </a>
-            <a href="https://linkedin.com/in/sumaksharika" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors">
-              <Linkedin size={20} /> LinkedIn
-            </a>
+            <a href="mailto:sumaksharika.n@gmail.com" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors"><Mail size={20} /> Get in Touch</a>
+            <a href="https://github.com/sumaksharikaa" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-colors border border-white/10"><Github size={20} /> GitHub</a>
+            <a href="https://linkedin.com/in/sumaksharika" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-500 transition-colors"><Linkedin size={20} /> LinkedIn</a>
           </div>
         </motion.div>
         <footer className="mt-20 text-gray-600 text-sm">
-          <p>© {new Date().getFullYear()} Sumaksharika Nainavarapu. All rights reserved.</p>
+          <p>\u00a9 {new Date().getFullYear()} Sumaksharika Nainavarapu. All rights reserved.</p>
         </footer>
       </section>
     </main>
