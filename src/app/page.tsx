@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin, ExternalLink, Download, BarChart3, TrendingDown, Brain, Activity, DollarSign, MessageSquare } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, ExternalLink, Download, BarChart3, TrendingDown, Brain, Activity, DollarSign, MessageSquare, Pill, Database, ShieldCheck, HeartPulse } from "lucide-react";
 
 export default function Home() {
   const fadeInUp = {
@@ -12,6 +12,50 @@ export default function Home() {
   };
 
   const projects = [
+    {
+      title: "Specialty Pharmacy Claims Analytics",
+      subtitle: "PostgreSQL • Python ETL • Streamlit • Plotly",
+      description: "End-to-end SP claims pipeline on 2,000 specialty pharmacy claims across 10 drugs and 7 payers. Full PostgreSQL schema with ER model, PL/pgSQL audit triggers, 11 KPI SQL queries, and 5-tab Streamlit executive dashboard.",
+      metrics: ["2,000 SP claims", "11 KPI queries", "Audit triggers"],
+      tags: ["Pharmacy", "PostgreSQL", "ETL", "Data Governance"],
+      github: "https://github.com/sumaksharikaa/sp-claims-analytics",
+      demo: "",
+      color: "blue",
+      Icon: Pill,
+    },
+    {
+      title: "Drug Utilization & Formulary Analytics",
+      subtitle: "MySQL • Python ETL • Streamlit • Prior Auth",
+      description: "Formulary tier management and drug utilization analytics on 5,000 Rx across 20 drugs. MySQL schema with stored procedure, 2,047 prior auth requests analyzed, generic substitution opportunity engine estimating plan savings.",
+      metrics: ["5,000 prescriptions", "2,047 PA requests", "MySQL + Stored Proc"],
+      tags: ["Formulary", "MySQL", "Prior Auth", "Drug Utilization"],
+      github: "https://github.com/sumaksharikaa/drug-utilization-analytics",
+      demo: "",
+      color: "emerald",
+      Icon: Database,
+    },
+    {
+      title: "Healthcare Data Quality & Governance",
+      subtitle: "PostgreSQL • Rules Engine • Audit Trail • Streamlit",
+      description: "Enterprise DQ pipeline with 21 configurable validation rules across 4 clinical datasets. Severity-weighted scoring, column-level data profiling, reconciliation reporting, downstream impact registry tracking 7 reports, and full audit log.",
+      metrics: ["21 DQ rules", "998 issues caught", "7 reports tracked"],
+      tags: ["Data Governance", "DQ Rules Engine", "Audit Trail", "Healthcare"],
+      github: "https://github.com/sumaksharikaa/healthcare-dq-governance",
+      demo: "",
+      color: "purple",
+      Icon: ShieldCheck,
+    },
+    {
+      title: "Pharmacy Readmission Risk Predictor",
+      subtitle: "XGBoost • scikit-learn • MLflow • CCI • Streamlit",
+      description: "30-day readmission risk prediction on 2,500 patients using Charlson Comorbidity Index (CCI) scoring, pharmacy features, and lab values. Logistic Regression achieved ROC-AUC of 0.8432. Interactive CCI calculator for real-time risk scoring.",
+      metrics: ["ROC-AUC: 0.8432", "2,500 patients", "CCI + XGBoost"],
+      tags: ["ML", "Readmission Risk", "CCI", "MLflow", "XGBoost"],
+      github: "https://github.com/sumaksharikaa/pharmacy-readmission-risk",
+      demo: "",
+      color: "pink",
+      Icon: HeartPulse,
+    },
     {
       title: "Financial Risk Dashboard",
       subtitle: "PostgreSQL • Python • XGBoost • Streamlit",
@@ -108,10 +152,12 @@ export default function Home() {
   ];
 
   const skills = [
-    { category: "Languages", items: ["Python (Pandas, NumPy)", "SQL (CTEs, Window Functions)"] },
-    { category: "ML & NLP", items: ["XGBoost", "FinBERT", "HuggingFace", "ARIMA", "Prophet", "Random Forest", "MLflow"] },
-    { category: "Data Warehousing", items: ["PostgreSQL", "Snowflake", "Azure", "ETL Pipelines", "Data Modeling"] },
-    { category: "Visualization", items: ["Streamlit", "Tableau", "Power BI", "Executive Dashboards"] },
+    { category: "Languages & Querying", items: ["Python (Pandas, NumPy)", "SQL", "Oracle/PL/SQL", "PostgreSQL", "MySQL", "Snowflake"] },
+    { category: "BI & Reporting", items: ["Power BI", "Tableau", "Streamlit", "SQL Developer", "Qlik (familiar)", "KPI Dashboards"] },
+    { category: "Analytics & ML", items: ["XGBoost", "scikit-learn", "MLflow", "FinBERT", "ARIMA", "Prophet", "Risk Stratification"] },
+    { category: "Data Engineering", items: ["ETL Pipelines", "ER Modeling", "Data Governance", "Audit Trail", "Data Quality", "Reconciliation"] },
+    { category: "Healthcare & Pharmacy", items: ["Specialty Pharmacy", "Drug Lifecycle", "Charlson Comorbidity Index", "EHR Analytics", "Prior Auth", "Formulary Management"] },
+    { category: "Governance & Tools", items: ["Data Governance", "Metadata Management", "Confluence", "Jira", "GitHub", "MLflow"] },
   ];
 
   const education = [
@@ -151,23 +197,23 @@ export default function Home() {
             </div>
             <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight leading-[1.1]">
               Data <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400">Scientist.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400">Analyst.</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-xl leading-relaxed">
-              Building <span className="text-white">credit risk models</span>,{" "}
-              <span className="text-white">NLP pipelines</span>, and self-service BI solutions that drive measurable business impact across Banking & Healthcare.
+              Building <span className="text-white">pharmacy analytics pipelines</span>,{" "}
+              <span className="text-white">data governance frameworks</span>, and BI dashboards that drive measurable outcomes across Healthcare & Financial Services.
             </p>
             <div className="grid grid-cols-3 gap-4 pt-2">
               <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
-                <div className="text-2xl font-bold text-blue-400">0.73</div>
-                <div className="text-xs text-gray-500 mt-1">AUC-ROC</div>
+                <div className="text-2xl font-bold text-blue-400">0.84</div>
+                <div className="text-xs text-gray-500 mt-1">ROC-AUC</div>
               </div>
               <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
-                <div className="text-2xl font-bold text-emerald-400">$34B</div>
-                <div className="text-xs text-gray-500 mt-1">Portfolio Analyzed</div>
+                <div className="text-2xl font-bold text-emerald-400">8</div>
+                <div className="text-xs text-gray-500 mt-1">Live Projects</div>
               </div>
               <div className="p-4 bg-white/5 border border-white/10 rounded-xl text-center">
-                <div className="text-2xl font-bold text-purple-400">3+</div>
+                <div className="text-2xl font-bold text-purple-400">4+</div>
                 <div className="text-xs text-gray-500 mt-1">Yrs Experience</div>
               </div>
             </div>
@@ -187,15 +233,15 @@ export default function Home() {
                 <span className="ml-2 text-xs text-gray-500 font-mono">results.py</span>
               </div>
               <div className="p-6 font-mono text-sm space-y-1">
-                <div><span className="text-blue-400">$</span> <span className="text-white">python financial_risk.py</span></div>
-                <div className="text-gray-500">Loading 2,260,668 loans...</div>
-                <div><span className="text-emerald-400">✓ XGBoost</span> <span className="text-gray-400">AUC-ROC:</span> <span className="text-yellow-400">0.73</span> <span className="text-white">🏆</span></div>
-                <div><span className="text-emerald-400">✓ Portfolio:</span> <span className="text-yellow-400">$34B</span> <span className="text-gray-500">analyzed</span></div>
-                <div className="pt-2"><span className="text-blue-400">$</span> <span className="text-white">python earnings_nlp.py</span></div>
-                <div className="text-gray-500">Loading FinBERT model...</div>
-                <div><span className="text-emerald-400">✓ Analyzed</span> <span className="text-yellow-400">514</span> <span className="text-gray-400">transcripts</span></div>
-                <div className="pt-2"><span className="text-blue-400">$</span> <span className="text-white">python demand_forecasting.py</span></div>
-                <div><span className="text-emerald-400">✓ XGBoost</span> <span className="text-gray-400">MAPE:</span> <span className="text-yellow-400">2.61%</span> <span className="text-gray-500">(74% below benchmark)</span></div>
+                <div><span className="text-blue-400">$</span> <span className="text-white">python sp_claims_etl.py</span></div>
+                <div className="text-gray-500">Loading 2,000 SP claims · PostgreSQL...</div>
+                <div><span className="text-emerald-400">✓ Approval Rate:</span> <span className="text-yellow-400">66.5%</span> <span className="text-gray-500">· Audit triggers active</span></div>
+                <div className="pt-2"><span className="text-blue-400">$</span> <span className="text-white">python dq_engine.py</span></div>
+                <div className="text-gray-500">Running 21 DQ rules · 4 tables...</div>
+                <div><span className="text-emerald-400">✓ Issues Found:</span> <span className="text-yellow-400">998</span> <span className="text-gray-500">· 7 reports affected</span></div>
+                <div className="pt-2"><span className="text-blue-400">$</span> <span className="text-white">python train_models.py</span></div>
+                <div className="text-gray-500">CCI scoring · XGBoost · MLflow...</div>
+                <div><span className="text-emerald-400">✓ ROC-AUC:</span> <span className="text-yellow-400">0.8432</span> <span className="text-gray-500">· 2,500 patients</span></div>
               </div>
             </div>
           </motion.div>
@@ -323,7 +369,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
           <div>
             <h2 className="text-3xl font-bold text-white mb-10">Technical Arsenal</h2>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
               {skills.map((grp, i) => (
                 <div key={i} className="p-4 bg-black/40 border border-white/10 rounded-xl">
                   <h3 className="text-white font-semibold mb-3">{grp.category}</h3>
@@ -367,7 +413,7 @@ export default function Home() {
       <section className="py-32 px-6 text-center">
         <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} className="max-w-3xl mx-auto bg-gradient-to-br from-blue-900/20 to-emerald-900/20 p-12 rounded-3xl border border-white/10">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let&apos;s build something together.</h2>
-          <p className="text-xl text-gray-400 mb-10">Actively targeting Senior Data Scientist and Lead Analyst roles across the United States.</p>
+          <p className="text-xl text-gray-400 mb-10">Actively targeting Senior Data Analyst roles across the United States — open to Healthcare, Pharma, and Financial Services.</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="mailto:sumaksharika.n@gmail.com" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors"><Mail size={20} /> Get in Touch</a>
             <a href="https://github.com/sumaksharikaa" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-colors border border-white/10"><Github size={20} /> GitHub</a>
