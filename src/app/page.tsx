@@ -126,13 +126,13 @@ export default function Home() {
       title: "SQL Analytics & dbt Project",
       subtitle: "SQL • dbt • Snowflake • Data Modeling",
       description: "End-to-end analytics engineering project using dbt + SQL to build modular data models, tests, and documentation on a real business dataset. Targeting banking and retail analytics use cases.",
-      metrics: ["Coming Soon", "In Progress"],
-      tags: ["dbt", "SQL", "Snowflake", "Data Modeling"],
-      github: "",
+      metrics: ["4,000 Rx", "15 SQL models", "40+ tests"],
+      tags: ["dbt", "SQL", "Snowflake", "Pharmacy Analytics"],
+      github: "https://github.com/sumaksharikaa/pharmacy-dbt-analytics",
       demo: "",
-      color: "purple",
+      color: "indigo",
       Icon: Brain,
-      comingSoon: true,
+      comingSoon: false,
     },
   ];
 
