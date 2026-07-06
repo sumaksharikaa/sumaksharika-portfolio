@@ -155,9 +155,11 @@ export default function Home() {
       period: "01/2021 – 08/2023",
       location: "Andhra Pradesh, India",
       achievements: [
-        "Built predictive models for clinical risk stratification contributing to a 22% reduction in 30-day readmissions.",
-        "Reduced missing/inconsistent records by 18% through automated EHR data validation and reconciliation workflows.",
-        "Designed Power BI dashboards and automated pipelines enabling near real-time insights for executive stakeholders.",
+        "Delivered consulting engagements for healthcare and pharmacy clients, collaborating with clinical SMEs and IT teams to gather requirements and translate operational needs into scalable data solutions.",
+        "Extracted, transformed, and validated large-scale EHR and pharmacy datasets using SQL and Python, reducing missing records by 18% through automated validation and reconciliation pipelines.",
+        "Developed risk stratification models using logistic regression and the Charlson Comorbidity Index (CCI), contributing to a 22% reduction in 30-day readmissions.",
+        "Designed interactive Power BI dashboards and automated ETL pipelines; commissioned and decommissioned datasets in alignment with governance requirements.",
+        "Supported data governance including metadata management, normalization, and standardization; documented ETL processes in Confluence for audit readiness.",
       ],
     },
   ];
