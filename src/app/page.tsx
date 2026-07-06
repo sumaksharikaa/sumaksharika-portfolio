@@ -119,7 +119,7 @@ export default function Home() {
       tags: ["dbt", "SQL", "Snowflake", "Data Modeling"],
       github: "",
       demo: "",
-      color: "purple",
+      color: "indigo",
       Icon: Brain,
       comingSoon: true,
     },
