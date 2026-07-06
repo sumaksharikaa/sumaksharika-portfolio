@@ -150,7 +150,7 @@ export default function Home() {
       ],
     },
     {
-      role: "Data Analyst / Data Scientist",
+      role: "Data Analyst",
       company: "TCS",
       period: "01/2021 – 08/2023",
       location: "Andhra Pradesh, India",
