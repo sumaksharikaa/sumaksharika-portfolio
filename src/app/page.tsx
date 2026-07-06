@@ -138,7 +138,7 @@ export default function Home() {
 
   const experience = [
     {
-      role: "Data Scientist / Data Analyst",
+      role: "Data Analyst",
       company: "HSBC",
       period: "10/2024 – Present",
       location: "Remote, USA",
