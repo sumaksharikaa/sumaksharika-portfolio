@@ -429,7 +429,7 @@ export default function Home() {
       <section className="py-32 px-6 text-center">
         <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} className="max-w-3xl mx-auto bg-gradient-to-br from-blue-900/20 to-emerald-900/20 p-12 rounded-3xl border border-white/10">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let&apos;s build something together.</h2>
-          <p className="text-xl text-gray-400 mb-10">Actively targeting Senior Data Analyst roles across the United States — open to Healthcare, Pharma, and Financial Services.</p>
+          <p className="text-xl text-gray-400 mb-10">Actively targeting Data Engineer roles across the United States — open to Healthcare, Pharma, and Financial Services.</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="mailto:sumaksharika.n@gmail.com" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors"><Mail size={20} /> Get in Touch</a>
             <a href="https://github.com/sumaksharikaa" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 text-white font-bold rounded-full hover:bg-white/20 transition-colors border border-white/10"><Github size={20} /> GitHub</a>
