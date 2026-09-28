@@ -213,7 +213,7 @@ export default function Home() {
             </div>
             <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight leading-[1.1]">
               Data <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400">Analyst.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400">Engineer.</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-xl leading-relaxed">
               Building <span className="text-white">pharmacy analytics pipelines</span>,{" "}
